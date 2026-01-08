@@ -1,16 +1,161 @@
 {% extends "@themes/"~template~"/html/base.html.twig" %}
 
 {% block content %}
-    {% if message is defined %}
-        <div class="form-message">
-            <p>{{ message|raw }}</p>
-        </div>
-    {% endif %}
+<style>
+    /* Form Page Styles - Override theme styles for standalone form display */
+    body {
+        background: #f8fafc !important;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .contractor-theme {
+        width: 100%;
+        max-width: 500px;
+    }
+    .form-wrapper {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        padding: 40px;
+    }
+    .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .form-header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+    .form-message {
+        background: #dbeafe;
+        border-left: 4px solid var(--primary-color);
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+    }
+    .form-message p {
+        color: #1e40af;
+        margin: 0;
+    }
+    .form-message.error {
+        background: #fee2e2;
+        border-left-color: #dc2626;
+    }
+    .form-message.error p {
+        color: #dc2626;
+    }
+    .form-message.success {
+        background: #d1fae5;
+        border-left-color: var(--accent-color);
+    }
+    .form-message.success p {
+        color: var(--accent-color);
+    }
+    .mauticform-wrapper {
+        max-width: 100%;
+    }
+    .mauticform-input,
+    .mauticform-textarea,
+    .mauticform-selectbox {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--gray-200);
+        border-radius: 6px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mauticform-input:focus,
+    .mauticform-textarea:focus,
+    .mauticform-selectbox:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+    .mauticform-label {
+        display: block;
+        font-weight: 500;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+    }
+    .mauticform-button-wrapper .mauticform-button {
+        background: var(--secondary-color);
+        color: white;
+        padding: 14px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+    .mauticform-button-wrapper .mauticform-button:hover {
+        background: #dc8b0c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+    .mauticform-errormsg {
+        color: #dc2626;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+    .mauticform-required {
+        color: #dc2626;
+    }
+    /* Checkbox and radio styling */
+    .mauticform-checkbox-grp,
+    .mauticform-radiogrp {
+        margin-bottom: 15px;
+    }
+    .mauticform-checkbox-row,
+    .mauticform-radio-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .mauticform-checkbox-row input,
+    .mauticform-radio-row input {
+        margin-right: 10px;
+        width: auto;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+        .form-wrapper {
+            padding: 30px 20px;
+        }
+        .form-header h1 {
+            font-size: 24px;
+        }
+    }
+</style>
 
-    <div class="form-container">
-        {% if header is defined %}
-        <h1 class="form-header">{{ header }}</h1>
+<div class="contractor-theme">
+    <div class="form-wrapper">
+        {# Required: Display message (validation errors, success messages, etc.) #}
+        {% if message is defined %}
+        <div class="form-message">
+            {{ message|raw }}
+        </div>
         {% endif %}
-        {{ content|raw }}
+
+        {# Required: Display header #}
+        {% if header is defined %}
+        <div class="form-header">
+            <h1>{{ header }}</h1>
+        </div>
+        {% endif %}
+
+        {# Required: Display form content #}
+        <div class="form-content">
+            {{ content|raw }}
+        </div>
     </div>
+</div>
 {% endblock %}
