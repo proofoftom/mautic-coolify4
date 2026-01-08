@@ -1,0 +1,7 @@
+{
+  "name": "Auto-Contractor",
+  "author": "Auto-Mautic",
+  "authorUrl": "https://auto-mautic.io",
+  "builder": ["grapesjsbuilder"],
+  "features": ["page", "email", "form"]
+}
