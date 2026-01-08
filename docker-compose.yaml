@@ -26,7 +26,8 @@ services:
     volumes:
       - "rabbitmq-data:/var/lib/rabbitmq"
   mautic_web:
-    image: "mautic/mautic:latest"
+    build:
+      dockerfile: Dockerfile
     volumes:
       - "mautic_data/config:/var/www/html/config:z"
       - "mautic_data/logs:/var/www/html/var/logs:z"
