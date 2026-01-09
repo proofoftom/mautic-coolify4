@@ -51,6 +51,12 @@ services:
       - MAUTIC_DB_PASSWORD=${SERVICE_PASSWORD_64_MYSQL}
       - MAUTIC_MESSENGER_DSN_EMAIL=${MAUTIC_MESSENGER_DSN_EMAIL:-amqp://guest:guest@rabbitmq:5672/mautic/messages}
       - MAUTIC_MESSENGER_DSN_HIT=${MAUTIC_MESSENGER_DSN_HIT:-amqp://guest:guest@rabbitmq:5672/mautic/messages}
+      - MAUTIC_URL=${MAUTIC_URL:-http://localhost:8080}
+      - MAUTIC_ADMIN_EMAIL=${MAUTIC_ADMIN_EMAIL:-}
+      - MAUTIC_ADMIN_PASSWORD=${MAUTIC_ADMIN_PASSWORD:-}
+      - MAUTIC_ADMIN_USERNAME=${MAUTIC_ADMIN_USERNAME:-admin}
+      - MAUTIC_ADMIN_FIRSTNAME=${MAUTIC_ADMIN_FIRSTNAME:-Admin}
+      - MAUTIC_ADMIN_LASTNAME=${MAUTIC_ADMIN_LASTNAME:-User}
     depends_on:
       mysql:
         condition: service_healthy
