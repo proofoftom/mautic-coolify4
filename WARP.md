@@ -147,6 +147,36 @@ docker compose -f docker-compose.local.yaml exec mysql mysql -u mautic -pmauticp
 # DESCRIBE users;              -- Show users table structure
 ```
 
+### Running Tests
+```bash
+# Run all tests
+./tests/run-tests.sh
+
+# Run specific test file
+bats tests/wrapper.bats
+bats tests/theme.bats
+
+# Run tests matching pattern
+./tests/run-tests.sh -f "MySQL"
+
+# Run with verbose output
+./tests/run-tests.sh -v
+
+# Run tests in parallel
+./tests/run-tests.sh -j 4
+```
+
+**Prerequisites:** Install BATS and jq
+```bash
+# macOS
+brew install bats-core jq
+
+# Ubuntu/Debian
+sudo apt-get install bats jq
+```
+
+See `tests/README.md` for detailed test documentation.
+
 ## Environment Variables
 
 ### Coolify-Managed (Production)

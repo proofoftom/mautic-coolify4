@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "dev-browser@dev-browser-marketplace": true,
+    "ralph-loop@claude-plugins-official": true
+  }
+}

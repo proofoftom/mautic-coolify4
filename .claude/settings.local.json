@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose:*)",
+      "Skill(dev-browser:dev-browser)",
+      "Bash(npx tsx:*)",
+      "Bash(cat:*)"
+    ]
+  }
+}
