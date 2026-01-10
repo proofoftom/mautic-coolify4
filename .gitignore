@@ -3,3 +3,4 @@
 
 # Docker volumes (if stored locally)
 mautic_data/
+mautic-themes/
