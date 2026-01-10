@@ -117,13 +117,7 @@ docker compose -f docker-compose.local.yaml logs -f mautic_web
 
 **After modifying themes:**
 ```bash
-# Rebuild only mautic_web (preserves database)
-docker compose -f docker-compose.local.yaml build mautic_web
-
-# Restart mautic_web
-docker compose -f docker-compose.local.yaml up -d mautic_web
-
-# Clear Mautic cache
+# Themes are live-mounted - just clear the cache
 docker compose -f docker-compose.local.yaml exec mautic_web php /var/www/html/bin/console cache:clear
 ```
 
@@ -289,7 +283,7 @@ php /var/www/html/bin/console mautic:campaigns:trigger # Trigger campaigns
 
 1. Create a new directory under `themes/` with the theme name
 2. Add required files: `config.json`, `html/page.html.twig`, `html/email.html.twig`, etc.
-3. Rebuild and restart `mautic_web` service
+3. Clear the Mautic cache (no rebuild needed for local development)
 
 Theme `config.json` format:
 ```json
@@ -302,12 +296,21 @@ Theme `config.json` format:
 }
 ```
 
-**After adding a theme:**
+### Local Theme Development (Live Reload)
+
+In local development, the `./themes/` directory is mounted directly into the container. Changes to theme files are reflected immediately without rebuilding.
+
+**After adding or modifying a theme:**
 ```bash
-docker compose -f docker-compose.local.yaml build mautic_web
-docker compose -f docker-compose.local.yaml up -d mautic_web
+# Just clear the cache - no rebuild needed
 docker compose -f docker-compose.local.yaml exec mautic_web php /var/www/html/bin/console cache:clear
 ```
+
+**Note:** The local mount replaces Mautic's built-in themes with only your custom themes from `./themes/`. This provides a cleaner development view.
+
+### Production Theme Deployment
+
+For production (Coolify), themes are baked into the Docker image at build time via the Dockerfile. Any new themes require a rebuild and redeployment.
 
 ## Environment Variables
 
