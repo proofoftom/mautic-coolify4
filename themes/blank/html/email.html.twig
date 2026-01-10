@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% if pageTitle is defined %}{{ pageTitle }}{% endif %}</title>
+</head>
+<body>
+    {% if content.html is defined %}{{ content.html|raw }}{% endif %}
+</body>
+</html>

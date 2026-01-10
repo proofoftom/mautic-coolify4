@@ -1,6 +1,14 @@
-{% extends "@themes/"~template~"/html/base.html.twig" %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pageTitle is defined %}{{ pageTitle }} | {% endif %}Reliable Home Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% if outputHeadDeclarations is defined %}{{ outputHeadDeclarations() }}{% endif %}
+</head>
+<body class="bg-white text-slate-800 antialiased">
+{% if content.html is defined %}{{ content.html|raw }}{% else %}
 <div class="contractor-theme">
     <!-- Sticky Header -->
     <header class="header">
@@ -835,4 +843,6 @@
         margin-top: 5px;
     }
 </style>
-{% endblock %}
+{% endif %}
+</body>
+</html>

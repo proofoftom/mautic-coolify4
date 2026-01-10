@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {# Theme CSS #}
-    <link rel="stylesheet" href="{{ getAssetUrl('themes/'~theme~'/assets/css/style.css', null, null, true) }}">
+    <link rel="stylesheet" href="{{ getAssetUrl('themes/'~template~'/assets/css/style.css', null, null, true) }}">
 
     {# Custom CSS variables for theming #}
     <style>
@@ -21,16 +21,16 @@
         }
     </style>
 
-    {# Mautic tracking code #}
-    {{ outputHeadDeclarations() }}
+    {# Mautic tracking code (only included in actual pages, not builder) #}
+    {% if outputHeadDeclarations is defined %}{{ outputHeadDeclarations() }}{% endif %}
 </head>
 <body class="bg-white text-slate-800 antialiased">
     {% block content %}{% endblock %}
 
     {# Theme JavaScript #}
-    <script src="{{ getAssetUrl('themes/'~theme~'/assets/js/main.js', null, null, true) }}"></script>
+    <script src="{{ getAssetUrl('themes/'~template~'/assets/js/main.js', null, null, true) }}"></script>
 
-    {# Mautic footer tracking #}
-    {{ outputFootDeclarations() }}
+    {# Mautic footer tracking (only included in actual pages, not builder) #}
+    {% if outputFootDeclarations is defined %}{{ outputFootDeclarations() }}{% endif %}
 </body>
 </html>

@@ -1,6 +1,12 @@
-{% extends "@themes/"~template~"/html/base.html.twig" %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pageTitle is defined %}{{ pageTitle }}{% endif %}</title>
+    {% if outputHeadDeclarations is defined %}{{ outputHeadDeclarations() }}{% endif %}
+</head>
+<body>
 <style>
     /* Form Page Styles - Override theme styles for standalone form display */
     body {
@@ -28,12 +34,12 @@
     .form-header h1 {
         font-size: 28px;
         font-weight: 700;
-        color: var(--primary-color);
+        color: #1e40af;
         margin-bottom: 10px;
     }
     .form-message {
         background: #dbeafe;
-        border-left: 4px solid var(--primary-color);
+        border-left: 4px solid #1e40af;
         padding: 15px 20px;
         border-radius: 6px;
         margin-bottom: 25px;
@@ -51,10 +57,10 @@
     }
     .form-message.success {
         background: #d1fae5;
-        border-left-color: var(--accent-color);
+        border-left-color: #059669;
     }
     .form-message.success p {
-        color: var(--accent-color);
+        color: #059669;
     }
     .mauticform-wrapper {
         max-width: 100%;
@@ -64,7 +70,7 @@
     .mauticform-selectbox {
         width: 100%;
         padding: 12px 16px;
-        border: 1px solid var(--gray-200);
+        border: 1px solid #e2e8f0;
         border-radius: 6px;
         font-size: 16px;
         margin-bottom: 15px;
@@ -74,17 +80,17 @@
     .mauticform-textarea:focus,
     .mauticform-selectbox:focus {
         outline: none;
-        border-color: var(--primary-color);
+        border-color: #1e40af;
         box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
     }
     .mauticform-label {
         display: block;
         font-weight: 500;
-        color: var(--text-dark);
+        color: #1e293b;
         margin-bottom: 8px;
     }
     .mauticform-button-wrapper .mauticform-button {
-        background: var(--secondary-color);
+        background: #f59e0b;
         color: white;
         padding: 14px 32px;
         font-size: 16px;
@@ -154,8 +160,10 @@
 
         {# Required: Display form content #}
         <div class="form-content">
-            {{ content|raw }}
+            {% if content is defined %}{{ content|raw }}{% endif %}
         </div>
     </div>
 </div>
-{% endblock %}
+{% if outputFootDeclarations is defined %}{{ outputFootDeclarations() }}{% endif %}
+</body>
+</html>
