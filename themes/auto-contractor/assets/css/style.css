@@ -6,7 +6,8 @@
 /* CSS Variables for Theming */
 :root {
   --primary-color: #1e40af;
-  --secondary-color: #f59e0b;
+  --secondary-color: #b45309;
+  --secondary-hover: #92400e;
   --accent-color: #059669;
   --text-dark: #1e293b;
   --text-light: #64748b;
@@ -510,9 +511,9 @@ section {
 }
 
 .btn-primary:hover {
-  background: #dc8b0c;
+  background: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
 }
 
 .btn-hero {
@@ -523,9 +524,9 @@ section {
 }
 
 .btn-hero:hover {
-  background: #dc8b0c;
+  background: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 20px rgba(180, 83, 9, 0.4);
 }
 
 /* Responsive Design */
@@ -628,9 +629,9 @@ section {
 }
 
 .mauticform-button-wrapper .mauticform-button:hover {
-  background: #dc8b0c;
+  background: var(--secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
 }
 
 .mauticform-errormsg {

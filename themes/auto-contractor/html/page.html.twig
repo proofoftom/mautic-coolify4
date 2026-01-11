@@ -1,235 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional HVAC, plumbing, and electrical services in Denver Metro. Licensed, bonded & insured. 24/7 emergency service available. Call for a free estimate.">
-    <title>{% if pageTitle is defined %}{{ pageTitle }} | {% endif %}Reliable Home Services</title>
-    <link rel="stylesheet" href="{{ getAssetUrl('themes/auto-contractor/assets/css/style.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Professional HVAC, plumbing, and electrical services in Denver Metro. Licensed, bonded & insured. 24/7 emergency service available. Call for a free estimate." />
+    <title>
+      {% if pageTitle is defined %}
+        {{ pageTitle }}
+        |
+      {% endif %}Reliable Home Services
+    </title>
+    <link rel="stylesheet" href="{{ getAssetUrl('themes/auto-contractor/assets/css/style.css') }}" />
     <script src="{{ getAssetUrl('themes/auto-contractor/assets/js/main.js') }}"></script>
-    {% if outputHeadDeclarations is defined %}{{ outputHeadDeclarations() }}{% endif %}
-</head>
-<body>
-{% if content.html is defined %}{{ content.html|raw }}{% else %}
-<div class="contractor-theme">
-    <!-- Sticky Header -->
-    <header class="header">
-        <div class="header-container">
+    {% if outputHeadDeclarations is defined %}
+      {{ outputHeadDeclarations() }}
+    {% endif %}
+  </head>
+  <body>
+    {% if content.html is defined %}
+      {{ content.html|raw }}
+    {% else %}
+      <div class="contractor-theme">
+        <!-- Sticky Header -->
+        <header class="header">
+          <div class="header-container">
             <div class="header-logo">
-                <h1>Reliable Home Services</h1>
+              <h1>Reliable Home Services</h1>
             </div>
             <div class="header-actions">
-                <a href="tel:5559876543" class="header-phone">(555) 987-6543</a>
-                <a href="#contact" class="btn-primary">Get Free Estimate</a>
+              <a href="tel:5559876543" class="header-phone">(555) 987-6543</a>
+              <a href="#contact" class="btn-primary">Get Free Estimate</a>
             </div>
-        </div>
-    </header>
+          </div>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
+        <main id="main-content">
+          <!-- Hero Section -->
+          <section class="hero">
+            <div class="hero-overlay">
+              <div class="hero-content">
                 <div class="hero-text">
-                    <h2 class="hero-headline">Professional HVAC & Plumbing Services</h2>
-                    <p class="hero-subheadline">Serving Denver Metro and surrounding areas with honest, dependable service</p>
-                    <a href="#contact" class="btn-hero">Schedule Service Today</a>
+                  <h2 class="hero-headline">Professional HVAC & Plumbing Services</h2>
+                  <p class="hero-subheadline">Serving Denver Metro and surrounding areas with honest, dependable service</p>
+                  <a href="#contact" class="btn-hero">Schedule Service Today</a>
                 </div>
+              </div>
             </div>
-        </div>
 
-        <!-- Trust Badges -->
-        <div class="trust-badges">
-            <div class="trust-badge">
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+              <div class="trust-badge">
                 <div class="trust-number">18+</div>
                 <div class="trust-label">Years in Business</div>
-            </div>
-            <div class="trust-badge">
+              </div>
+              <div class="trust-badge">
                 <div class="trust-number">12,000+</div>
                 <div class="trust-label">Projects Completed</div>
-            </div>
-            <div class="trust-badge">
+              </div>
+              <div class="trust-badge">
                 <div class="trust-number">99%</div>
                 <div class="trust-label">Satisfaction Rate</div>
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
+          <!-- Services Section -->
+          <section class="services">
+            <div class="container">
+              <div class="section-header">
                 <h2>Our Services</h2>
                 <p>Comprehensive home services to keep your home comfortable year-round</p>
+              </div>
+              <div class="services-grid">
+                <div class="service-card">
+                  <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3>HVAC Services</h3>
+                  <p>AC repair, heating installation, maintenance, and emergency service available 24/7</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3>Plumbing</h3>
+                  <p>Leak repair, drain cleaning, water heater service, and complete bathroom/kitchen plumbing</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3>Electrical</h3>
+                  <p>Panel upgrades, outlet installation, lighting, surge protection, and electrical inspections</p>
+                </div>
+              </div>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3>HVAC Services</h3>
-                    <p>AC repair, heating installation, maintenance, and emergency service available 24/7</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                        </svg>
-                    </div>
-                    <h3>Plumbing</h3>
-                    <p>Leak repair, drain cleaning, water heater service, and complete bathroom/kitchen plumbing</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h3>Electrical</h3>
-                    <p>Panel upgrades, outlet installation, lighting, surge protection, and electrical inspections</p>
-                </div>
-            </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-grid">
+          <!-- Why Choose Us Section -->
+          <section class="about">
+            <div class="container">
+              <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Professional technician at work">
+                  <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Professional technician at work" />
                 </div>
                 <div class="about-content">
-                    <h2>Why Denver Trusts Us</h2>
-                    <p>Reliable Home Services has been keeping Denver homes comfortable since 2005. As a family-owned business, we treat every customer like a neighbor—because you are.</p>
-                    <p>Our technicians are background-checked, drug-tested, and continuously trained on the latest equipment and techniques.</p>
-                    <ul class="about-bullets">
-                        <li>Licensed, Bonded & Insured</li>
-                        <li>24/7 Emergency Service</li>
-                        <li>Upfront Pricing—No Surprises</li>
-                        <li>100% Satisfaction Guarantee</li>
-                        <li>Financing Available</li>
-                    </ul>
-                    <div class="about-badge">
-                        <strong>Licensed & Insured | CO Lic #HC-2847</strong>
-                    </div>
+                  <h2>Why Denver Trusts Us</h2>
+                  <p>Reliable Home Services has been keeping Denver homes comfortable since 2005. As a family-owned business, we treat every customer like a neighbor—because you are.</p>
+                  <p>Our technicians are background-checked, drug-tested, and continuously trained on the latest equipment and techniques.</p>
+                  <ul class="about-bullets">
+                    <li>Licensed, Bonded & Insured</li>
+                    <li>24/7 Emergency Service</li>
+                    <li>Upfront Pricing—No Surprises</li>
+                    <li>100% Satisfaction Guarantee</li>
+                    <li>Financing Available</li>
+                  </ul>
+                  <div class="about-badge">
+                    <strong>Licensed & Insured | CO Lic #HC-2847</strong>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
+          <!-- Testimonials Section -->
+          <section class="testimonials">
+            <div class="container">
+              <div class="section-header">
                 <h2>What Our Neighbors Say</h2>
+              </div>
+              <div class="testimonials-grid">
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-text">"Excellent service at a reasonable rate. They were on time and the job done was immaculate. I'll definitely be using them again in the future."</p>
+                  <div class="testimonial-author">
+                    <strong>Sarah M.</strong>
+                    <span>Denver, CO</span>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-text">"Fast response time and top-notch work. The technician explained everything clearly and had my AC running perfectly in no time."</p>
+                  <div class="testimonial-author">
+                    <strong>Mike P.</strong>
+                    <span>Aurora, CO</span>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-text">"Called in the morning with a broken furnace, and they were here by afternoon. Clean, professional work. No surprises on the bill."</p>
+                  <div class="testimonial-author">
+                    <strong>Jennifer L.</strong>
+                    <span>Lakewood, CO</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Excellent service at a reasonable rate. They were on time and the job done was immaculate. I'll definitely be using them again in the future."</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah M.</strong>
-                        <span>Denver, CO</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Fast response time and top-notch work. The technician explained everything clearly and had my AC running perfectly in no time."</p>
-                    <div class="testimonial-author">
-                        <strong>Mike P.</strong>
-                        <span>Aurora, CO</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Called in the morning with a broken furnace, and they were here by afternoon. Clean, professional work. No surprises on the bill."</p>
-                    <div class="testimonial-author">
-                        <strong>Jennifer L.</strong>
-                        <span>Lakewood, CO</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Service Area Section -->
-    <section class="service-area">
-        <div class="container">
-            <div class="section-header">
+          <!-- Service Area Section -->
+          <section class="service-area">
+            <div class="container">
+              <div class="section-header">
                 <h2>Serving the Denver Metro</h2>
+              </div>
+              <p class="service-area-content">We proudly serve Denver, Aurora, Lakewood, Littleton, Englewood, Arvada, Westminster, Thornton, and surrounding communities.</p>
             </div>
-            <p class="service-area-content">We proudly serve Denver, Aurora, Lakewood, Littleton, Englewood, Arvada, Westminster, Thornton, and surrounding communities.</p>
-        </div>
-    </section>
+          </section>
 
-    <!-- Contact CTA Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-grid">
+          <!-- Contact CTA Section -->
+          <section id="contact" class="contact">
+            <div class="container">
+              <div class="contact-grid">
                 <div class="contact-form">
-                    <h2>Ready to Get Started?</h2>
-                    <p class="contact-subheadline">Fill out the form below for a free, no-obligation estimate. We'll get back to you within 2 hours during business hours.</p>
-                    <div class="form-placeholder">
-                        <p>{form=1}</p>
-                    </div>
+                  <h2>Ready to Get Started?</h2>
+                  <p class="contact-subheadline">Fill out the form below for a free, no-obligation estimate. We'll get back to you within 2 hours during business hours.</p>
+                  <div class="form-placeholder">
+                    <p>{form=1}</p>
+                  </div>
                 </div>
                 <div class="contact-info">
-                    <div class="contact-info-item">
-                        <h3>Call Us Now</h3>
-                        <a href="tel:5559876543" class="contact-phone">(555) 987-6543</a>
-                        <p>Available 24/7 for emergencies</p>
-                    </div>
-                    <div class="contact-info-item">
-                        <h3>Visit Our Office</h3>
-                        <p>4521 Brighton Blvd<br>Denver, CO 80216</p>
-                    </div>
-                    <div class="contact-info-item">
-                        <h3>Business Hours</h3>
-                        <p>Mon-Fri: 7am-7pm<br>Sat: 8am-4pm<br>Emergency: 24/7</p>
-                    </div>
-                    <div class="contact-info-item">
-                        <h3>Email Us</h3>
-                        <p><a href="mailto:service@reliablehomeservices.com">service@reliablehomeservices.com</a></p>
-                    </div>
+                  <div class="contact-info-item">
+                    <h3>Call Us Now</h3>
+                    <a href="tel:5559876543" class="contact-phone">(555) 987-6543</a>
+                    <p>Available 24/7 for emergencies</p>
+                  </div>
+                  <div class="contact-info-item">
+                    <h3>Visit Our Office</h3>
+                    <p>
+                      4521 Brighton Blvd<br />Denver, CO 80216
+                    </p>
+                  </div>
+                  <div class="contact-info-item">
+                    <h3>Business Hours</h3>
+                    <p>
+                      Mon-Fri: 7am-7pm<br />Sat: 8am-4pm<br />Emergency: 24/7
+                    </p>
+                  </div>
+                  <div class="contact-info-item">
+                    <h3>Email Us</h3>
+                    <p>
+                      <a href="mailto:service@reliablehomeservices.com">service@reliablehomeservices.com</a>
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
+        </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Reliable Home Services</h4>
-                    <p>Your Trusted Local Experts Since 2005</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>4521 Brighton Blvd<br>Denver, CO 80216<br>(555) 987-6543</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li>HVAC Services</li>
-                        <li>Plumbing</li>
-                        <li>Electrical</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <p>Licensed & Insured<br>CO Lic #HC-2847</p>
-                </div>
+              <div class="footer-col">
+                <h4>Reliable Home Services</h4>
+                <p>Your Trusted Local Experts Since 2005</p>
+              </div>
+              <div class="footer-col">
+                <h4>Contact</h4>
+                <p>
+                  4521 Brighton Blvd<br />Denver, CO 80216<br />(555) 987-6543
+                </p>
+              </div>
+              <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                  <li>HVAC Services</li>
+                  <li>Plumbing</li>
+                  <li>Electrical</li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Legal</h4>
+                <p>
+                  Licensed & Insured<br />CO Lic #HC-2847
+                </p>
+              </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Reliable Home Services. All rights reserved.</p>
+              <p>&copy; 2025 Reliable Home Services. All rights reserved.</p>
             </div>
-        </div>
-    </footer>
-</div>
-{% endif %}
-
-</body>
+          </div>
+        </footer>
+      </div>
+    {% endif %}
+  </body>
 </html>
